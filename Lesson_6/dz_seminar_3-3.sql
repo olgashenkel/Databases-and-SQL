@@ -142,3 +142,25 @@ GROUP BY
 	EXTRACT(YEAR FROM Orders.order_date),
 	EXTRACT(MONTH FROM Orders.order_date);	
     
+SELECT product_name, price FROM Products
+	WHERE price > 100
+ORDER BY price DESC
+LIMIT 5;
+
+SELECT Categories.category_name, COUNT(DISTINCT Orders.order_id) AS order_count
+	FROM OrderDetails
+JOIN Products ON OrderDetails.product_id = Products.product_id
+JOIN Categories ON Products.category_id = Categories.category_id
+JOIN Orders ON OrderDetails.order_id = Orders.order_id
+GROUP BY Categories.category_name
+HAVING COUNT(DISTINCT Orders.order_id) > 1;
+
+SELECT
+	Customers.customer_id,
+	Customers.customer_name,
+	SUM(Orders.total_amount) AS total_amount,
+	COUNT(Orders.order_id) AS order_count
+FROM Orders
+JOIN Customers ON Orders.customer_id = Customers.customer_id
+GROUP BY Customers.customer_id, Customers.customer_name
+ORDER BY Customers.customer_id;
