@@ -1,5 +1,6 @@
 USE seminar_4;
 
+-- Задание 1. Создание и заполнение таблицы AUTO
 DROP TABLE IF EXISTS AUTO;
 CREATE TABLE  AUTO 
 (       
@@ -21,22 +22,40 @@ VALUES
 (111117,'BMW', 'СИНИЙ', date'2005-01-01', null),
 (111119,'LADA', 'СИНИЙ', date'2017-01-01', 9213333331);
 
+
+-- Вывести на экран сколько машин каждого цвета для марок BMW и LADA
 SELECT MARK, COLOR, COUNT(COLOR) AS COUNT FROM auto
 	WHERE MARK IN ('BMW', 'LADA')
 GROUP BY MARK, COLOR
 ORDER BY MARK;
+
+
+/* Задание 2. 
+Вывести на экран марку авто (количество) и количество авто не этой марки.
+Например: 	100 машин, из них 20 – BMW и 80 машин другой марки; 
+			AUDI – 30 и 70 машин другой марки, 
+            LADA – 15 и 85 авто другой марки
+*/
 
 SELECT DISTINCT MARK, 
 	(SELECT COUNT(MARK) FROM auto AS auto_all WHERE auto_all.MARK = auto.MARK) AS 'Quantity of this model', 
 	(SELECT COUNT(MARK) FROM auto AS auto_all WHERE auto_all.MARK != auto.MARK) AS 'Quantity of other models'
 	FROM auto AS auto;
 
+
+/* Задание 1. Даны 2 таблицы.
+Напишите запрос, который вернет строки из таблицы test_a, 
+id которых нет в таблице test_b, НЕ используя ключевого слова NOT
+*/
+
+-- Создание таблиц test_a и test_b
 CREATE TABLE test_a 
 	(id INT, test VARCHAR(10));
 
 CREATE TABLE test_b
 	(id INT);
 
+-- Заполнение таблиц test_a и test_b
 INSERT INTO test_a (id, test)
 VALUES
 (10, 'A'),
@@ -51,6 +70,7 @@ VALUES
 (30),
 (50);
 
+-- Создание запроса
 SELECT * FROM test_a
 	NATURAL LEFT JOIN test_b
     WHERE test_b.id IS NULL;
