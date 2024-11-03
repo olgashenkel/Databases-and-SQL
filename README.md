@@ -5,3 +5,5 @@
 - ***[Урок 4. Семинар: SQL – создание объектов, простые запросы выборки](https://github.com/olgashenkel/Databases-and-SQL/tree/main/Lesson_4)***
 
 - ***[Урок 6. Семинар: SQL – выборка данных, сортировка, агрегатные функции](https://github.com/olgashenkel/Databases-and-SQL/tree/main/Lesson_6)***
+
+- ***[Урок 8. Семинар: SQL – работа с несколькими таблицами](https://github.com/olgashenkel/Databases-and-SQL/tree/main/Lesson_8)***
