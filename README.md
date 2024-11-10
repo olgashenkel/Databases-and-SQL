@@ -9,3 +9,5 @@
 - ***[Урок 8. Семинар 4: SQL – работа с несколькими таблицами](https://github.com/olgashenkel/Databases-and-SQL/tree/main/Seminar_04)***
 
 - ***[Урок 10. Семинар 5: SQL – оконные функции](https://github.com/olgashenkel/Databases-and-SQL/tree/main/Seminar_05)***
+
+- ***[Урок 12. Семинар 6: SQL – Транзакции. Временные таблицы, управляющие конструкции, циклы](https://github.com/olgashenkel/Databases-and-SQL/tree/main/Seminar_06)***
