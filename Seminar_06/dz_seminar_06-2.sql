@@ -31,4 +31,4 @@ BEGIN
 END//
 DELIMITER ;
 
-SELECT fk_numbers(0) AS 'Чётные числа';
+SELECT fk_numbers(10) AS 'Чётные числа';
